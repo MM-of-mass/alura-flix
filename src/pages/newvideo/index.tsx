@@ -1,13 +1,12 @@
-import { Button } from '@/components/Button';
 import { Header } from '@/components/header';
 
-export default function Home() {
+export default function NewVideo() {
   return (
-    <main className="min-h-screen">
+    <main>
       <Header.Root>
         <Header.Logo />
-        <Button.Home />
       </Header.Root>
+      <h1>Novo vídeo</h1>
     </main>
   );
 }
