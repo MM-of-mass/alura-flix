@@ -1,6 +1,9 @@
+import { videos } from '@/@helpers/videos';
 import { Button } from '@/components/Button';
 import { Header } from '@/components/Header';
 import { Banner } from '@/components/home/Banner';
+
+import videoImage from '../assets/videoImage.svg';
 
 export default function Home() {
   return (
@@ -21,8 +24,18 @@ export default function Home() {
             />
           </Banner.Content>
         </Banner.Container>
-        <Banner.VideoContainer />
+        <Banner.VideoContainer videoImage="banner" img={videoImage} />
       </Banner.Root>
+
+      <div className="flex gap-5 px-10 -mt-44">
+        {videos.map((video) => (
+          <Banner.VideoContainer
+            videoImage="slide"
+            key={video.id}
+            img={video.img}
+          />
+        ))}
+      </div>
     </main>
   );
 }
