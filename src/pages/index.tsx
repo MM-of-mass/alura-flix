@@ -1,6 +1,6 @@
-import { videos } from '@/@helpers/videos';
+import { dataScience, frontEnd, mobile } from '@/@helpers/videos';
 import { Button } from '@/components/Button';
-import { Header } from '@/components/Header';
+import { Header } from '@/components/header';
 import { Banner } from '@/components/home/Banner';
 
 import videoImage from '../assets/videoImage.svg';
@@ -10,11 +10,11 @@ export default function Home() {
     <main className="min-h-screen">
       <Header.Root>
         <Header.Logo />
-        <Button.Home text="Front End" />
+        <Button.Home text="Novo vídeo" />
       </Header.Root>
       <Banner.Root>
         <Banner.Container>
-          <Banner.Category />
+          <Banner.Category title="Front End" />
           <Banner.Content>
             <Banner.Title title="SEO com React" />
             <Banner.TextContent
@@ -26,15 +26,26 @@ export default function Home() {
         </Banner.Container>
         <Banner.VideoContainer videoImage="banner" img={videoImage} />
       </Banner.Root>
+      <div className="px-10  -mt-44">
+        <div className="flex gap-5">
+          {frontEnd.map(frontEnd => (
+            <Banner.VideoContainer videoImage="slide" key={frontEnd.id} img={frontEnd.img} />
+          ))}
+        </div>
 
-      <div className="flex gap-5 px-10 -mt-44">
-        {videos.map((video) => (
-          <Banner.VideoContainer
-            videoImage="slide"
-            key={video.id}
-            img={video.img}
-          />
-        ))}
+        <h2 className="bg-green-600 w-[204px] text-[35px]">Data Science</h2>
+        <div className="flex gap-5 ">
+          {dataScience.map(dataScience => (
+            <Banner.VideoContainer videoImage="slide" key={dataScience.id} img={dataScience.img} />
+          ))}
+        </div>
+
+        <h2 className="bg-yellow-500 text-[35px] w-[204px] text-center ">Mobile</h2>
+        <div className="flex gap-5">
+          {mobile.map(mobile => (
+            <Banner.VideoContainer videoImage="slide" key={mobile.id} img={mobile.img} />
+          ))}
+        </div>
       </div>
     </main>
   );
