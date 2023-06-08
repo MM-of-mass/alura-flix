@@ -7,14 +7,18 @@ export default function Home() {
     <main className="min-h-screen">
       <Header.Root>
         <Header.Logo />
-        <Button.Home />
+        <Button.Home text="Front End" />
       </Header.Root>
       <Banner.Root>
         <Banner.Container>
           <Banner.Category />
           <Banner.Content>
-            <Banner.Title />
-            <Banner.TextContent />
+            <Banner.Title title="SEO com React" />
+            <Banner.TextContent
+              text="Esse desafio é uma forma de aprendizado. É um mecanismo onde você pode se
+                engajar na resolução de um problema para poder aplicar todo o conhecimento
+                adquirido na Formação React."
+            />
           </Banner.Content>
         </Banner.Container>
         <Banner.VideoContainer />
