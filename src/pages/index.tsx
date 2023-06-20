@@ -2,6 +2,7 @@ import { dataScience, frontEnd, mobile } from '@/@helpers/videos';
 import { Button } from '@/components/Button';
 import { Header } from '@/components/header';
 import { Banner } from '@/components/home/Banner';
+import { Carousel } from '@/components/home/Carousel';
 
 import videoImage from '../assets/videoImage.svg';
 
@@ -26,27 +27,12 @@ export default function Home() {
         </Banner.Container>
         <Banner.VideoContainer videoImage="banner" img={videoImage} />
       </Banner.Root>
-      <div className="px-10  -mt-44">
-        <div className="flex gap-5">
-          {frontEnd.map(frontEnd => (
-            <Banner.VideoContainer videoImage="slide" key={frontEnd.id} img={frontEnd.img} />
-          ))}
-        </div>
 
-        <h2 className="bg-green-600 w-[204px] text-[35px]">Data Science</h2>
-        <div className="flex gap-5 ">
-          {dataScience.map(dataScience => (
-            <Banner.VideoContainer videoImage="slide" key={dataScience.id} img={dataScience.img} />
-          ))}
-        </div>
-
-        <h2 className="bg-yellow-500 text-[35px] w-[204px] text-center ">Mobile</h2>
-        <div className="flex gap-5">
-          {mobile.map(mobile => (
-            <Banner.VideoContainer videoImage="slide" key={mobile.id} img={mobile.img} />
-          ))}
-        </div>
-      </div>
+      <Carousel.Root>
+        <Carousel.FrontEnd></Carousel.FrontEnd>
+        <Carousel.DataScience></Carousel.DataScience>
+        <Carousel.Mobile></Carousel.Mobile>
+      </Carousel.Root>
     </main>
   );
 }
