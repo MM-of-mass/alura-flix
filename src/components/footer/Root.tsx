@@ -5,5 +5,5 @@ interface RootProps {
 }
 
 export default function Root({ children }: RootProps) {
-  return <section className="px-10 -mt-44">{children}</section>;
+  return <section className="mt-10">{children}</section>;
 }
