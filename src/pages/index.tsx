@@ -1,6 +1,5 @@
-import { dataScience, frontEnd, mobile } from '@/@helpers/videos';
 import { Button } from '@/components/Button';
-import { Header } from '@/components/header';
+import { Header } from '../components/header';
 import { Footer } from '@/components/footer';
 import { Banner } from '@/components/home/Banner';
 import { Carousel } from '@/components/home/Carousel';
